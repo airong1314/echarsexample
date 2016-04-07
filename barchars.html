@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edeg,chorme=1">
+    <script src="js/echarts.min.js"></script>
+    <link rel="stylesheet" href="stylesheets/data.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="nav center-block">
+            <div class="pull-left logo"></div>
+            <div class="pull-right tab">
+                <ul class="login">
+                    <li> <a href="">用户名</a></li>
+                    <li><a href="">admin</a></li>
+                    <li><a href="">等级</a></li>
+                    <li><a href="">管理员</a></li>
+                </ul>
+                <ul class="subnav">
+                    <a href="">
+                        <li>地图大数据</li>
+                    </a>
+                    <a href="">
+                        <li class="current">大数据统计</li>
+                    </a>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="cont-nav">
+        <div class="pull-left cont-left">
+            <ul>
+                <a href="">
+                    <li>区域适种作物</li>
+                </a>
+                <a href="">
+                    <li class="crop"> 作物曲线图</li>
+                </a>
+                <a href="">
+                    <li>区域大数据</li>
+                </a>
+            </ul>
+        </div>
+        <div class="pull-right cont-right">
+            <select>
+                <option value="volvo">重庆市</option>
+                <option value="saab">江北区</option>
+                <option value="opel">渝中区</option>
+                <option value="audi">北碚区</option>
+            </select>
+            <select>
+                <option value="volvo">渝中区</option>
+                <option value="saab">江北区</option>
+                <option value="opel">渝中区</option>
+                <option value="audi">北碚区</option>
+            </select>
+            <select>
+                <option value="volvo">重庆市</option>
+                <option value="saab">江北区</option>
+                <option value="opel">渝中区</option>
+                <option value="audi">北碚区</option>
+            </select>
+            <select class="big" id="people">
+                <option value="volvo">请选择权益人</option>
+                <option value="saab">江北区</option>
+                <option value="opel">渝中区</option>
+                <option value="audi">北碚区</option>
+            </select>
+            <select class="big" id="greenhouses">
+                <option value="volvo">请选择大棚</option>
+                <option value="saab">江北区dnfk kdjhfj</option>
+                <option value="opel">渝中区</option>
+                <option value="audi">北碚区</option>
+            </select>
+            <select>
+                <option value="volvo">2015年</option>
+                <option value="saab">2016年</option>
+            </select>
+            <select>
+                <option value="volvo">1月</option>
+                <option value="saab">2月</option>
+                <option value="opel">3月</option>
+                <option value="audi">4月</option>
+            </select>
+            <input class="btn" type="button" value="查询">
+        </div>
+    </div>
+    <div id="main" class="center-block" style="width: 900px;height:500px;padding:0 50px;"></div>
+    <div class="footer">
+        <div class="foot center-block">
+            <div class="pull-left btlogo"></div>
+            <div class="pull-right text"><span class="mr">君盾集团</span><span>Copyright(C)2006-2015 All Rights Reserved</span></div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    var myChart = echarts.init(document.getElementById('main'));
+    option = {
+        backgroundColor: '#f3f3f3',
+        color: ['#f66e00', '#6bc169', '#449bc4'],
+        title: {
+            left: -5,
+            top: 10,
+            text: '重庆',
+            textStyle: {
+                fontSize: 14,
+                fontFamily: "微软雅黑"
+            }
+        },
+        grid: {
+            left: '0.8%',
+            containLabel: false
+        },
+        tooltip: {
+            trigger: 'axis',
+            formatter: function(params) {
+                return params[0].seriesName + ' : ' + params[0].value + ' 单位1' + ' <br/>' + params[1].seriesName + ' : ' + params[1].value + ' 单位2' + ' <br/>' + params[2].seriesName + ' : ' + params[2].value + ' 单位3';
+            }
+        },
+        toolbox: {
+            top: '8',
+            right: "20",
+            show: true,
+            feature: {
+                mark: {
+                    show: true
+                },
+                dataZoom: {
+                    show: true
+                },
+                dataView: {
+                    show: true,
+                    readOnly: false
+                },
+                restore: {
+                    show: true
+                },
+                saveAsImage: {
+                    show: true
+                }
+            }
+        },
+        legend: {
+            data: ['产量', '收益', '面积'],
+            right: "20%",
+            top: "10px"
+        },
+        xAxis: [{
+            name: '一月',
+            nameTextStyle: {
+                fontSize: 14
+            },
+            type: 'category',
+            data: ['番茄', '红薯', '土豆', '玉米']
+        }],
+        yAxis: [{
+            type: 'value',
+        }],
+        series: [{
+            name: '产量',
+            type: 'bar',
+            label: {
+                normal: {
+                    show: true,
+                    position: 'top',
+                    formatter: '{c}kg'
+                }
+            },
+            data: [2.0, 4.9, 7.0, 23],
+
+        }, {
+            name: '收益',
+            type: 'bar',
+            label: {
+                normal: {
+                    show: true,
+                    position: 'top'
+                }
+            },
+            data: [2.6, 5.9, 9.0, 26.4]
+        }, {
+            name: '面积',
+            type: 'bar',
+            label: {
+                normal: {
+                    show: true,
+                    position: 'top'
+                }
+            },
+            data: [2.0, 2.2, 3.3, 4.5]
+
+        }]
+    };
+    myChart.setOption(option);
+    </script>
+</body>
+
+</html>

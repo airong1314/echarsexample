@@ -1,0 +1,156 @@
+@charset "utf-8";
+@import "compass";
+@import "compass/reset";
+@import "compass/support";
+@import "myreset";
+//支持的浏览器的最低版本
+$browser-minimum-versions: ("ie": "6", "": "");
+//支持的浏览器 可以逗号后者空格分开
+//$supported-browsers: chrome, ie;
+%text-center{
+	text-align: center;
+}
+.footer,.header{
+   width: 100%;
+  
+  }
+.nav{
+	@include clearfix;
+   	width: 1000px;
+    height: 100%;
+   	.logo{
+      cursor: pointer;
+   		width: 482px;
+   		height: 52px;
+   		margin-top: 14px;
+   		background-image: image-url('logo.png');
+   		background-repeat: no-repeat;
+   	}
+  }
+ .tab{ 
+  	.login{
+  		 text-align: right;
+
+  		li{
+  		@include inline-block;
+  		width: 40px;
+  		line-height: 38px;
+      a{  color: #fff;}
+  	}
+  	}
+  
+  	.subnav{
+  		li{
+  			@include inline-block;
+  			width: 136px;
+  			line-height: 38px;
+  			@extend %text-center;
+  			background-color:#006729;
+  			color: #fff;
+  			font-size: 14px;
+  			font-weight: 700;
+  			margin-left: 4px;
+  			@include border-top-radius(5px);
+  			&.current,&:hover{
+  				background-color:#fff;
+  			 color: #006729;
+  			}
+  			
+  		}
+
+  	}
+  }
+ .foot{
+ 	  width: 1000px;
+    @include clearfix;
+ }
+.header{
+	@include clearfix;
+   background-color: #009b3d;
+   height: 74px;
+
+}
+.footer{
+	height: 66px;
+  margin-top: 50px;
+	background-color: #363636;
+	.text{
+		color: #fff;
+		line-height: 66px;
+		span{
+      cursor: pointer;
+			&.mr{
+				margin-right: 26px;
+			}
+		}
+	}
+}
+.btlogo{
+  cursor: pointer;
+	width: 136px;
+   		height: 52px;
+   		margin-top: 14px;
+   		background-image: image-url('btlogo.png');
+   		background-repeat: no-repeat;
+}
+//导航部分
+.cont-nav{
+    width: 1000px;
+    margin:0 auto;
+    margin-top: 36px;
+    border-bottom:2px solid #009b3d;
+    height: 30px;
+  }
+
+.cont-left{
+  ul{
+    li{ 
+      margin-right:2px;
+      @include inline-block;
+      background: #c8c8c8;
+      width: 92px;
+      height: 30px;
+      color: #333;
+      text-align: center;
+      line-height: 30px;
+      @include border-top-radius(3px);
+      font-size: 14px;
+      &.crop{
+        background:#009b3d;
+        color: #fff;
+         
+      }
+      &:hover{
+      background:#009b3d;
+      color: #fff;
+      }  
+    }
+  } 
+}
+.cont-right{   
+  margin-top: 4px;
+    label{
+      @include inline-block;
+      line-height: 28px;
+    }
+    select{
+      padding: 2px;
+      width: 80px;
+      border:1px solid #bcbcbc;
+      font-size: 12px;
+      color: #333;
+      @include inline-block;
+      &.big{
+        width: 110px;
+      }
+  }
+}
+.btn{
+
+  background-color: #009b3d;
+  border: none;
+  color: #fff;
+ width: 40px;
+ height: 25px;
+ @include border-radius(3px);
+}

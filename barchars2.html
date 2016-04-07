@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edeg,chorme=1">
+    <script src="js/echarts.min.js"></script>
+    <link rel="stylesheet" href="stylesheets/data.css">
+    <link rel="stylesheet" href="stylesheets/charts2.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="nav center-block">
+            <div class="pull-left logo"></div>
+            <div class="pull-right tab">
+                <ul class="login">
+                    <li> <a href="">用户名</a></li>
+                    <li><a href="">admin</a></li>
+                    <li><a href="">等级</a></li>
+                    <li><a href="">管理员</a></li>
+                </ul>
+                <ul class="subnav">
+                    <a href="">
+                        <li>地图大数据</li>
+                    </a>
+                    <a href="">
+                        <li class="current">大数据统计</li>
+                    </a>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="cont-nav">
+        <div class="pull-left cont-left">
+            <ul>
+                <a href="">
+                    <li>区域适种作物</li>
+                </a>
+                <a href="">
+                    <li class="crop"> 作物曲线图</li>
+                </a>
+                <a href="">
+                    <li>区域大数据</li>
+                </a>
+            </ul>
+        </div>
+         <div class="pull-right cont-right">
+            <select>
+                <option value="volvo">重庆市</option>
+                <option value="saab">江北区</option>
+                <option value="opel">渝中区</option>
+                <option value="audi">北碚区</option>
+            </select>
+            <select>
+                <option value="volvo">渝中区</option>
+                <option value="saab">江北区</option>
+                <option value="opel">渝中区</option>
+                <option value="audi">北碚区</option>
+            </select>
+            <select>
+                <option value="volvo">重庆市</option>
+                <option value="saab">江北区</option>
+                <option value="opel">渝中区</option>
+                <option value="audi">北碚区</option>
+            </select>
+            <select class="big" id="people">
+                <option value="volvo">请选择权益人</option>
+                <option value="saab">江北区</option>
+                <option value="opel">渝中区</option>
+                <option value="audi">北碚区</option>
+            </select>
+            <select class="big" id="greenhouses">
+                <option value="volvo">请选择大棚</option>
+                <option value="saab">江北区dnfk kdjhfj</option>
+                <option value="opel">渝中区</option>
+                <option value="audi">北碚区</option>
+            </select>
+            <select>
+                <option value="volvo">2015年</option>
+                <option value="saab">2016年</option>
+            </select>
+            <select>
+                <option value="volvo">1月</option>
+                <option value="saab">2月</option>
+                <option value="opel">3月</option>
+                <option value="audi">4月</option>
+            </select>
+            <input class="btn" type="button" value="查询">
+        </div>
+    </div>
+    <div class="markbox center-block">
+        <ul class="mark">
+            <li><span class="danger"></span>空气温度</li>
+            <li><span class="success"></span>空气湿度</li>
+            <li><span class="info"></span>土壤ph值</li>
+            <li><span class="default"></span>空气密度</li>
+            <li><span class="primary"></span>空气质量</li>
+            <li><span class="warning"></span>空气清洁度</li>
+        </ul>
+    </div>
+    <div class="centerbox center-block clearfix">
+        <div id="main" class="pull-left" style="width: 540px;height:509px; border: 20px solid #f3f3f3; border-top:0;border-bottom: 0">
+        </div>
+        <div class="pull-right tab-list">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>推荐作物</th>
+                        <th>适合度</th>
+                        <th>预期产量</th>
+                        <th>预计收益</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>土豆</td>
+                        <td>80%</td>
+                        <td>200kg/亩</td>
+                        <td>2000元/亩</td>
+                    </tr>
+                    <tr>
+                        <td>土豆</td>
+                        <td>80%</td>
+                        <td>200kg/亩</td>
+                        <td>2000元/亩</td>
+                    </tr>
+                    <tr>
+                        <td>土豆</td>
+                        <td>80%</td>
+                        <td>200kg/亩</td>
+                        <td>2000元/亩</td>
+                    </tr>
+                    <tr>
+                        <td>土豆</td>
+                        <td>80%</td>
+                        <td>200kg/亩</td>
+                        <td>2000元/亩</td>
+                    </tr>
+                    <tr>
+                        <td>土豆</td>
+                        <td>80%</td>
+                        <td>200kg/亩</td>
+                        <td>2000元/亩</td>
+                    </tr>
+                    <tr>
+                        <td>土豆</td>
+                        <td>80%</td>
+                        <td>200kg/亩</td>
+                        <td>2000元/亩</td>
+                    </tr>
+                    <tr>
+                        <td>土豆</td>
+                        <td>80%</td>
+                        <td>200kg/亩</td>
+                        <td>2000元/亩</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="foot center-block">
+            <div class="pull-left btlogo"></div>
+            <div class="pull-right text"><span class="mr">君盾集团</span><span>Copyright(C)2006-2015 All Rights Reserved</span></div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    var myChart = echarts.init(document.getElementById('main'));
+    option = {
+        backgroundColor: '#f3f3f3',
+        legend: {
+            data: ['空气温度', '空气湿度', '土壤ph值', '空气密度', '空气质量', '空气清洁度']
+        },
+        title: {
+            x: 'center',
+            textStyle: {
+                fontSize: 14,
+                fontFamily: "微软雅黑"
+            },
+            subtext: '这里的数值代表平均数值',
+            subtextStyle: {
+                color: "red",
+            }
+        },
+        grid: {
+            left: '0.8%',
+
+            containLabel: false
+        },
+        tooltip: {
+            trigger: 'axis'
+        },
+
+        xAxis: [{
+
+            name: '一月',
+            nameTextStyle: {
+                fontSize: 14
+            },
+            type: 'category',
+            data: ['空气温度', '空气湿度', '土壤ph值', '空气密度', '空气质量', '空气清洁度']
+        }],
+        yAxis: [{
+
+            name: '      重庆',
+            type: 'value',
+            nameGap: 20,
+            nameTextStyle: {
+                fontWeight: 'bold',
+                fontSize: 14,
+                fontFamily: "微软雅黑"
+            }
+        }],
+        series: [{
+                type: 'bar',
+                barWidth: 20,
+                itemStyle: {
+                    normal: {
+                        color: function(params) {
+                            // build a color map as your need.
+                            var colorList = [
+                                '#f63400', '#18b87a', '#238fc2', '#67697a', '#9cae21', '#d94d4d'
+                            ];
+                            return colorList[params.dataIndex];
+
+                        },
+                        label: {
+                            show: true,
+                            position: 'top',
+                            formatter: function(value) {
+                                switch (value.dataIndex) {
+                                    case 0:
+                                        return value.value + 'kg'
+                                        break;
+                                    case 1:
+                                        return value.value + 'c'
+                                        break;
+                                    default:
+                                        return value.value + ''
+                                        break;
+                                }
+
+                            }
+                        }
+                    }
+                },
+                data: []
+            }
+
+        ]
+    };
+    option.series[0].data = [1, 2, 3, 4, 5, 6];
+    console.log()
+    myChart.setOption(option);
+    </script>
+</body>
+
+</html>

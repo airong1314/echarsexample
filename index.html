@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edeg,chorme=1">
+    <script src="js/echarts.min.js"></script>
+    <link rel="stylesheet" href="stylesheets/data.css">
+</head>
+
+<body>
+<p style="width: 100px; height: auto;word-break:break-all;
+    word-wrap:break-word"></p>
+    <div class="header">
+        <div class="nav center-block">
+            <div class="pull-left logo"></div>
+            <div class="pull-right tab">
+                <ul class="login">
+                    <li> <a href="">用户名</a></li>
+                    <li><a href="">admin</a></li>
+                    <li><a href="">等级</a></li>
+                    <li><a href="">管理员</a></li>
+                </ul>
+                <ul class="subnav">
+                    <a href="">
+                        <li>区域适种作物</li>
+                    </a>
+                    <a href="">
+                        <li class="current">作物曲线图</li>
+                    </a>
+                    <a href="">
+                        <li>区域大数据</li>
+                    </a>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="cont-nav clearfix">
+        <div class="pull-left cont-left">
+            <ul>
+                <a href="">
+                    <li>区域适种作物</li>
+                </a>
+                <a href="">
+                    <li class="crop"> 作物曲线图</li>
+                </a>
+                <a href="">
+                    <li>区域大数据</li>
+                </a>
+            </ul>
+        </div>
+        <div class="pull-right cont-right">
+            <select>
+                <option value="volvo">重庆市</option>
+                <option value="saab">江北区</option>
+                <option value="opel">渝中区</option>
+                <option value="audi">北碚区</option>
+            </select>
+            <select>
+                <option value="volvo">渝中区</option>
+                <option value="saab">江北区</option>
+                <option value="opel">渝中区</option>
+                <option value="audi">北碚区</option>
+            </select>
+            <select>
+                <option value="volvo">重庆市</option>
+                <option value="saab">江北区</option>
+                <option value="opel">渝中区</option>
+                <option value="audi">北碚区</option>
+            </select>
+            <select class="big" id="people">
+                <option value="volvo">请选择权益人</option>
+                <option value="saab">江北区</option>
+                <option value="opel">渝中区</option>
+                <option value="audi">北碚区</option>
+            </select>
+            <select class="big" id="greenhouses">
+                <option value="volvo">请选择大棚</option>
+                <option value="saab">江北区dnfk kdjhfj</option>
+                <option value="opel">渝中区</option>
+                <option value="audi">北碚区</option>
+            </select>
+            <select>
+                <option value="volvo">2015年</option>
+                <option value="saab">2016年</option>
+            </select>
+            <select>
+                <option value="volvo">1月</option>
+                <option value="saab">2月</option>
+                <option value="opel">3月</option>
+                <option value="audi">4月</option>
+            </select>
+            <input class="btn" type="button" value="查询">
+        </div>
+    </div>
+    <div id="main" class="center-block" style="width: 900px;height:500px; padding:0 50px"></div>
+    <div class="footer">
+        <div class="foot center-block">
+            <div class="pull-left btlogo"></div>
+            <div class="pull-right text"><span class="mr">君盾集团</span><span>Copyright(C)2006-2015 All Rights Reserved</span></div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main'));
+
+    // 指定图表的配置项和数据
+    option = {
+        backgroundColor: '#f3f3f3',
+        color: ['#f66e00', '#69a5c1', '#6bc169'],
+        title: {
+            left: -5,
+            top: 10,
+            text: '土豆',
+            textStyle: {
+                fontSize: 14,
+                fontFamily: "微软雅黑"
+            }
+        },
+        tooltip: {
+            trigger: 'item'
+        },
+        legend: {
+            data: [{
+                    name: '预估产量',
+                    icon: 'square',
+                }, {
+                    name: '预估价格',
+                    icon: 'square',
+                }, {
+                    name: '适合度',
+                    icon: 'square',
+                },
+
+            ],
+            right: "20%",
+            top: "10px"
+        },
+        grid: {
+            left: '0.8%',
+            right: '2%',
+            containLabel: false
+        },
+        xAxis: [{
+            type: 'category',
+     
+            data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+            position: {
+                'top': '10'
+            }
+        }],
+        yAxis: [{
+                type: 'value',
+            }
+
+        ],
+        series: [{
+            name: '预估产量',
+            type: 'line',
+           
+            data: [120, 120, 120, 120, 120, 120, 120]
+        }, {
+            name: '预估价格',
+            type: 'line',
+          
+            data: [120, 120, 120, 150, 120, 120, 120]
+        }, {
+            name: '适合度',
+            type: 'line',
+            
+            data: [120, 120, 120, 120, 120, 120, 120]
+        }]
+    };
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+    console.log(option.series[0].data);
+    console.log(option.series[1].data);
+    console.log(option.series[2].data)
+    </script>
+</body>
+
+</html>
