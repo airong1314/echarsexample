@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="keywords" content="君农哥" />
+    <meta name="description" content="君农哥" />
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <base target="_blank" />
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: "微软雅黑";
+    }
+    
+    html {
+        height: 100%;
+    }
+    
+    body {
+        transition: .8s ease-in;
+        -webkit-transition: .8s ease-in;
+    }
+    
+    html,
+    body {
+        overflow-x: scroll;
+    }
+    
+    #top {
+        text-align: center;
+    }
+    
+    #top img {
+        display: inline-block;
+        vertical-align: middle;
+        *vertical-align: auto;
+        *zoom: 1;
+        *display: inline;
+    }
+    
+    .text-center {
+        text-align: center;
+    }
+    
+    .foot {
+        padding: 10px 0;
+        width: 1000px;
+        margin: 0 auto;
+        background-color: #4f5050;
+        line-height: 20px;
+        color: #fff;
+        margin-top: -4px;
+        font-size: 12px;
+    }
+    
+    .more {
+        width: 1001px;
+        height: 40px;
+        background: #009b3d;
+        margin: 0 auto;
+        color: #fff;
+        font-size: 12px;
+        cursor: pointer;
+    }
+    .more span{
+        font-size:14px;
+    }
+    
+    .moveup {
+        -ms-transform: translateY(0);
+        /* IE 9 */
+        -webkit-transform: translateY(0);
+        /* Safari */
+        transform: translateY(0);
+    }
+    
+    .move {
+        -ms-transform: translateY(-500px);
+        /* IE 9 */
+        -webkit-transform: translateY(500px);
+        /* Safari */
+        transform: translateY(-500px);
+    }
+    </style>
+</head>
+
+<body>
+    <div id="top">
+        <img src="images/index.png" width="1001" height="664" border="0" usemap="#Map" />
+        <map name="Map" id="Map">
+            <area shape="rect" coords="0,1,696,327" href="http://shop.junnongge.com/shop/index.php" />
+            <area shape="rect" coords="697,0,997,328" href="http://shop.junnongge.com/shop/item-344.html" />
+            <area shape="rect" coords="0,325,303,659" href="http://shop.junnongge.com/shop/item-277.html" />
+            <area shape="rect" coords="303,324,699,663" href="http://shop.junnongge.com/shop/item-241.html" />
+            <area shape="rect" coords="700,325,1002,498" href="http://shop.junnongge.com/shop/item-343.html" />
+            <area shape="rect" coords="700,498,1011,660" href="http://shop.junnongge.com/shop/item-268.html" />
+            <p id="btn" class="more">
+                <span>︾</span>
+                <br>
+                更多内容
+            </p>
+    </div>
+    <div id="canshow" class="center text-center" style="display: none">
+        <img src="images/boot.png" width="1000" height="505" border="0" usemap="#Maptwo" />
+        <map name="Maptwo" id="Maptwo">
+            <area shape="rect" coords="3,0,203,307" href="http://finance.junnongge.com/det/1/1" />
+            <area shape="rect" coords="202,0,691,309" href="http://112.124.1.80:8088/agric/demoLogin.jsp" />
+            <area shape="rect" coords="691,-2,999,141" href="#" />
+            <area shape="rect" coords="694,144,997,307" href="http://web.junnongge.com/" />
+            <area shape="rect" coords="0,307,490,504" href="http://trace.junnongge.com/" />
+            <area shape="rect" coords="488,310,691,503" href="http://policy.junnongge.com/pl/1/1" />
+            <area shape="rect" coords="691,304,996,503" href="http://partner.junnongge.com/partners/1/1" />
+        </map>
+    </div>
+    <div class="foot text-center">版权所有：沈阳圆梦科技有限公司
+        <br/> 渝ICP备案10014494号 Copyright © 2007 - 2012 Jundun technology All Rights Reserve</div>
+    </map>
+    <script>
+    var arr =[1,2,3,4];
+    arr[0]=4;
+    console.log(arr);
+    var btn = document.getElementById('btn'),
+        canshow = document.getElementById('canshow'),
+        body = document.body;
+    var flag = true;
+    btn.onclick = function(argument) {
+        flag = !flag;
+        if (!flag) {
+            this.innerHTML = " <span>︽</span><br>隐藏 ";
+            canshow.style.display = "block";
+            body.className = "";
+            body.className = "move"
+
+        } else {
+            this.innerHTML = " ︾<br/> 更多内容 ";
+            canshow.style.display = "none";
+            body.className = "";
+
+        }
+    }
+    window.onscroll = function(argument) {
+        body.className = "moveup"
+    }
+    </script>
+</body>
+
+</html>
