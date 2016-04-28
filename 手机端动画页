@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- 
+   data-class 设置动画名字，具体动画名字参考animate.css
+   data-delay 设置动画延迟时间
+   本页面设计图640  rem  用px除以64获得  例子640px/64= 10rem
+   需要动画的元素需要加 .animated  .hide
+-->
+<head>
+    <meta charset="utf-8">
+    <title>动画</title>
+    <link rel="stylesheet" type="text/css" href="http://chongqing.sinaimg.cn/images/hesg/css/animate.css" />
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="http://chongqing.sinaimg.cn/mobilecssjs/swiper.min.css">
+    <script src="http://chongqing.sinaimg.cn/mobilecssjs/flexible_css.js"></script>
+    <script src="http://chongqing.sinaimg.cn/mobilecssjs/flexible.js"></script>
+    <!-- Demo styles -->
+    <style>
+    html,
+    body {
+        position: relative;
+        height: 100%;
+    }
+    
+    body {
+        background: #eee;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color: #000;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .swiper-container {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .swiper-slide {
+        width:10.0rem;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+    
+    .one,
+    .two {
+        width: 7.84375rem;
+        height: 8.78125rem;
+    }
+    
+    .hide {
+        display: none;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- Swiper -->
+    <div id="nu" class="a b" style="height: 40px">
+        0
+    </div>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img class="animated hide one" data-class="bounceIn" data-delay='1s' src="http://chongqing.sinaimg.cn/images/et12/chuangxingren/dd2.png" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img class="animated hide two" data-class="lightSpeedIn" data-delay="0.5s" src="http://chongqing.sinaimg.cn/images/et12/chuangxingren/six2.png" alt="">
+                <img class="animated hide two" data-class="lightSpeedIn" data-delay="0.5s" src="http://chongqing.sinaimg.cn/images/gwdd/res/p1t1.png" alt="">
+                <img class="animated hide two" data-class="lightSpeedIn" data-delay="0.5s" src="http://chongqing.sinaimg.cn/images/gwdd/res/p1t5.png" alt="">
+                <img class="animated hide two" data-class="lightSpeedIn" data-delay="0.5s" src="http://chongqing.sinaimg.cn/images/gwdd/res/p2t2.png" alt="">
+                <img class="animated hide two" data-class="lightSpeedIn" data-delay="0.5s" src="http://chongqing.sinaimg.cn/images/yjf/btn_up.png" alt="">
+                <img class="animated hide two" data-class="lightSpeedIn" data-delay="0.5s" src="http://chongqing.sinaimg.cn/images/langzhong/one.jpg" alt="">
+               
+            </div>
+            <div class="swiper-slide">Slide 3</div>
+            <div class="swiper-slide">Slide 4</div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+    <!-- Swiper JS -->
+    <script src="http://chongqing.sinaimg.cn/mobilecssjs/swiper.min.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+    //图片加载
+    -(function () {
+            var nu = document.querySelector('#nu');
+    var num = parseInt(nu.innerHTML);
+    var images = document.querySelectorAll('img');
+    var n = images.length;
+    for (var i = 0; i < images.length; i++) {
+        var ele = images[i];
+        var myn = 0;
+        loadimg(ele, i);
+    };
+   
+
+    function loadimg(ele, i) {
+        var imgobj = new Image();
+        imgobj.src = ele.src;
+        imgobj.onload = function() {
+            myn++;
+            nu.innerHTML = ((Math.round(myn / n * 100)) + '%')
+        };
+        imgobj.onerror = function() {
+            myn++;
+            nu.innerHTML = ((Math.round(myn / n * 100)) + '%')
+        };
+    };
+    })();
+
+//第一屏
+ ~(function() {
+     var thisDiv = document.querySelectorAll('.swiper-slide')[0];
+        var cur = thisDiv.querySelectorAll('.animated');
+        for (var i = 0; i < cur.length; i++) {
+               cur[i].classList.remove('hide');
+            cur[i].classList.add(cur[i].dataset.class);
+            cur[i].style.animationDelay = cur[i].dataset.delay;
+        };
+     
+    }())
+//初始化swiper
+    var swiper = new Swiper('.swiper-container', {
+        //pagination: '.swiper-pagination',//可选 显示分页按钮
+        paginationClickable: true,// 允许分页
+        direction: 'vertical', //可选 
+        effect: 'fade',//可选淡入淡出
+        onSlideChangeStart: function() {
+            var thisDiv = swiper.slides[swiper.activeIndex]
+            var cur = thisDiv.querySelectorAll('.animated');
+            for (var i = 0; i < cur.length; i++) {
+                cur[i].classList.add('hide');
+                cur[i].classList.remove(cur[i].dataset.class);
+                
+            }
+        },
+        onSlideChangeEnd: function() {
+            var thisDiv = swiper.slides[swiper.activeIndex]
+            var cur = thisDiv.querySelectorAll('.animated');
+            for (var i = 0; i < cur.length; i++) {
+                cur[i].classList.remove('hide');
+                cur[i].classList.add(cur[i].dataset.class);
+                cur[i].style.animationDelay = cur[i].dataset.delay;
+
+            }
+        }
+    });
+    </script>
+</body>
+
+</html>
